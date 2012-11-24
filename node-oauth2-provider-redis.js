@@ -6,14 +6,6 @@ var redis = require('redis')
 var db = redis.createClient ();
 
 
-// hardcoded list of <client id, client secret> tuples
-var myClients = {
- '1': '1secret',
-};
-
-// temporary grant storage
-var myGrants = {};
-
 exports.oap = new OAuth2Provider ({crypt_key: 'encryption secret', sign_key: 'signing secret'});
 
 // If the user is not authorized, first send them to the login page
